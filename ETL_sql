@@ -1,0 +1,26 @@
+DROP TABLE crime
+DROP TABLE schools
+
+CREATE TABLE crime (
+"CASE#" VARCHAR,
+"BEAT" VARCHAR,
+"Zipcode" VARCHAR
+);
+
+CREATE TABLE schools (
+"Name of School" VARCHAR,
+"ZIP Code" VARCHAR,
+"CPS Performance Policy Level" VARCHAR,
+"Safety Score" VARCHAR,
+"Family Involvement Score" VARCHAR,
+"Parent Engagement Score" VARCHAR,
+"Average Student Attendance" VARCHAR
+);
+
+SELECT * FROM crime;
+SELECT * FROM schools;
+
+SELECT crime."CASE#", crime."BEAT", crime."Zipcode", schools."Name of School", schools."ZIP Code"
+FROM crime
+JOIN schools
+ON schools."ZIP Code" = crime."Zipcode";
